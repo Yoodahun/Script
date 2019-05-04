@@ -12,7 +12,7 @@
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b") #공백문자 처리 handling space in filename
 GITHUB_PAGE_DIR="Documents/Github/Yoodahun.github.io"
-POSTS="_posts/"
+POSTS="_posts"
 MOVE_TO_DIR=$1
 WORK_DIRECTORY="_drafts"
 ############## Be Careful !!! This is working Directory! So, you shoud be rewrite ! ############
