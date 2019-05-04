@@ -9,7 +9,9 @@
 ######################################
 
 ############## Be Careful !!! This is working Directory! So, you should be rewrite ! ############
-GITHUB_PAGE_DIR="Documents/github_blog/Yoodahun.github.io"
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b") #공백문자 처리 handling space in filename
+GITHUB_PAGE_DIR="Documents/Github/Yoodahun.github.io"
 POSTS="_posts/"
 MOVE_TO_DIR=$1
 WORK_DIRECTORY="_drafts"
@@ -20,17 +22,25 @@ if [ -z "$MOVE_TO_DIR" ]; then
   echo "wrong parameter"
   exit 1
 else
-  for convertFile in `ls "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY"`; do
+  for convertFile in `ls "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/"`; do
+    if [ $? -ne 0 ]; then
+      echo "No such file or directory"
+      exit 1
+    fi
     echo "$convertFile"
-    mv "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY" "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/$DATE_FORMAT-$convertFile"
+    mv "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/$convertFile" "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/$DATE_FORMAT-$convertFile"
   done
   if [ $? -eq 0 ]; then
      read -p "Push to Remote Repo of Git (y/n) ?" agree
-     if [ $agree -eq "y"]; then
+     if [ $agree == "y" ]; then
        sh "$HOME/$GITHUB_PAGE_DIR/pushToMasterRemoteRepo.sh"
      else
        echo "Exit Script. You should be push your commit to remote repo."
      fi
+  else
+    echo "There is Error."
   fi
 fi
+
+IFS=$SAVEIFS
 exit 0
