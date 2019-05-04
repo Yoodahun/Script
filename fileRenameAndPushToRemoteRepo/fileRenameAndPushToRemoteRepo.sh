@@ -33,7 +33,8 @@ else
   if [ $? -eq 0 ]; then
      read -p "Push to Remote Repo of Git (y/n) ?" agree
      if [ $agree == "y" ]; then
-       sh "$HOME/$GITHUB_PAGE_DIR/pushToMasterRemoteRepo.sh"
+       cd "$HOME/$GITHUB_PAGE_DIR/"
+       sh pushToMasterRemoteRepo.sh
      else
        echo "Exit Script. You should be push your commit to remote repo."
      fi
