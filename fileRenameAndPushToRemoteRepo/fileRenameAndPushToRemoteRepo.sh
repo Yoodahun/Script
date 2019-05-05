@@ -29,6 +29,7 @@ else
     fi
     echo "$convertFile"
     mv "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/$convertFile" "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/$DATE_FORMAT-$convertFile"
+    ls -l "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/"
   done
   if [ $? -eq 0 ]; then
      read -p "Push to Remote Repo of Git (y/n) ?" agree
