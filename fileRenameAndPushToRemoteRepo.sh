@@ -19,7 +19,7 @@ WORK_DIRECTORY="_drafts"
 DATE_FORMAT=`date +%Y-%m-%d`
 
 if [ -z "$MOVE_TO_DIR" ]; then
-  echo "wrong parameter"
+  echo "There is no Parameter or file path"
   exit 1
 else
   for convertFile in `ls "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/"`; do
@@ -41,6 +41,7 @@ else
      fi
   else
     echo "There is Error."
+    exit 1
   fi
 fi
 
