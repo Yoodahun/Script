@@ -9,19 +9,18 @@
 ######################################
 
 ############## Be Careful !!! This is working Directory! So, you should be rewrite ! ############
+source constantEnv.txt
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b") #공백문자 처리 handling space in filename
-GITHUB_PAGE_DIR="Documents/Github/Yoodahun.github.io"
-POSTS="_posts"
-MOVE_TO_DIR=$1
-WORK_DIRECTORY="_drafts"
-############## Be Careful !!! This is working Directory! So, you shoud be rewrite ! ############
 DATE_FORMAT=`date +%Y-%m-%d`
+MOVE_TO_DIR=$1 # First Parameter that path move to
+############## Be Careful !!! This is working Directory! So, you shoud be rewrite ! ############
 
 if [ -z "$MOVE_TO_DIR" ]; then
   echo "There is no Parameter or file path"
   exit 1
 else
+  ls -l "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/"
   for convertFile in `ls "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/"`; do
     if [ $? -ne 0 ]; then
       echo "No such file or directory"
@@ -29,8 +28,10 @@ else
     fi
     echo "$convertFile"
     mv "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/$convertFile" "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/$DATE_FORMAT-$convertFile"
-    ls -l "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/"
   done
+  ls -l "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/"
+
+  ## add, commit, push git
   if [ $? -eq 0 ]; then
      read -p "Push to Remote Repo of Git (y/n) ?" agree
      if [ $agree == "y" ]; then
