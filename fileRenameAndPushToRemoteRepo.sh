@@ -28,11 +28,12 @@ else
     fi
     echo "$convertFile"
     mv "$HOME/$GITHUB_PAGE_DIR/$WORK_DIRECTORY/$convertFile" "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/$DATE_FORMAT-$convertFile"
+    moveResult=$?
   done
   ls -l "$HOME/$GITHUB_PAGE_DIR/$POSTS/$MOVE_TO_DIR/"
 
   ## add, commit, push git
-  if [ $? -eq 0 ]; then
+  if [ $moveResult -eq 0 ]; then
      read -p "Push to Remote Repo of Git (y/n) ?" agree
      if [ $agree == "y" ]; then
        cd "$HOME/$GITHUB_PAGE_DIR/"
@@ -41,7 +42,7 @@ else
        echo "Exit Script. You should be push your commit to remote repo."
      fi
   else
-    echo "There is Error."
+    echo "There is an Error."
     exit 1
   fi
 fi
