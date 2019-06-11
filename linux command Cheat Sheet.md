@@ -32,6 +32,8 @@
 
 `cd FilePath`
 
+![1](image/1.png)
+
 - フォルダを移動するためのコマンド。
 - フォルダのパスに`..`を入れると現在のフォルダの上の階層のフォルダに移動。
 - ルートに戻るためには　`FilePath`を入力しなくてもいい
@@ -42,6 +44,8 @@
 
 `pwd`
 
+![2](image/2.png)
+
 - 現在、ユーザーがいるパスを表示（作業している階層・パス）
 
 ---
@@ -49,6 +53,10 @@
 ### ls, List
 
 `ls [option]`
+
+![3](image/3.png)
+
+![4](image/4.png)
 
 - ファイルやフォルダのリストを表示します。
 - `-l` ファイルやフォルダの詳細まで表示する
@@ -60,7 +68,10 @@
 
 `touch [option] filename1 [filename2] ...`
 
-- ファイルを生成。
+![6](image/6.png)
+
+ファイルを生成。
+
 - 一つに行に複数のファイルを作成可能。
 - `-c` 現在時間にファイルの時間情報を修正
 - `-t YYYYMMDDhhmm` ファイルの時間情報を指定して変更
@@ -71,10 +82,17 @@
 
 `mkdir [option] foldername`
 
+![5](image/5.png)
+
 - フォルダを作成
+
 - `-m` 権限指定
 
 ---
+
+
+
+
 
 
 
@@ -88,6 +106,8 @@
 
 `mv [option] filename path(filename)`
 
+![7](image/7.png)
+
 - ファイルを他のフォルダに移動させたり、ファイル名を変更する。
 - `-b` 移動先に同じ名前のファイルやフォルダが存在すれば、バックアップを作った後、移動させる。
 - `-f`移動先に同じ名前のファイルが存在すれば、すぐ上書きする。
@@ -98,6 +118,10 @@
 ### cp, Copy
 
 `cp [option] filename path(filename)`
+
+![8](image/8.png)
+
+
 
 - ファイルを指定したパスにコピーする。（もしくは指定したファイル名にコピーして作成する）
 - `-P` コピー対象ファイルを指定した際、パスまで指定したら、そのパス全体をコピーする。
@@ -114,9 +138,15 @@
 
 ---
 
+
+
+
+
 ### cat, Concatenate,  *catenate*
 
 `cat [option] filename [filename2] ...`
+
+![9](image/9.png)
 
 - ファイルの中身を出力します。
 - `>` や`>>`を使って、別ファイルに上書きしたり、追記したりも可能
@@ -136,10 +166,6 @@
 
 ---
 
-
-
-
-
 ### head
 
 `head [option] filename`
@@ -152,6 +178,8 @@
 
 `find folder(path) [option] filename`
 
+![10](image/10.png)
+
 - あるファイルを検索するために使う。
 - `-name` 大文字・小文字を区分して検索
 - `-iname` 大文字・小文字区分せずに検索
@@ -161,9 +189,13 @@
 
 ---
 
+
+
 ### grep
 
 `grep [option] pattern filename`
+
+![11](image/11.png)
 
 - ファイルの内容を検索
 - `-i` 大文字・小文字を区分しない
@@ -173,33 +205,11 @@
 
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### chmod, Change Mode
 
 `chmod option permission filename`
+
+![12](image/12.png)
 
 - ファイルやフォルダの権限を変更する。
 - `+-r` read権限を付与・削除する
@@ -233,9 +243,33 @@
 
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### vim
 
-`vi(vim) filename`
+`vi(vim) filename`![13](image/13.png)
 
 - Terminal環境で使うText Editor
 
@@ -265,15 +299,19 @@
 
 - `esc`で入力モードから命令モードに切り替え
 
-
-
-
-
 ---
 
 参考資料
 
+https://www.sejuku.net/blog/5465
+
 https://www.cheatography.com/davechild/cheat-sheets/linux-command-line/
+
+https://www.geeksforgeeks.org/linux-commands/
+
+[http://www.redout.net/data/command.html](http://www.redout.net/data/command.html)
+
+
 
 
 
