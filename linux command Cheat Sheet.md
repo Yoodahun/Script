@@ -1,6 +1,8 @@
 # Linux Command Cheat Sheet
 
+<div style="text-align: right">システム開発第2部１グループ</div>
 
+<div style="text-align: right">ユダフン</div>
 
 ## Terminal Overview
 
@@ -245,15 +247,15 @@
 
 
 
+### basename
 
+`basename filePath [file extension]`
 
+- パスを含めたファイル名から、ファイル名だ取得する際。
 
+- パスの後ろにオプションとして拡張子を追記すると拡張子なしのファイル名を取得する。
 
-
-
-
-
-
+  ![image-20190715170327897](../../../Library/Application Support/typora-user-images/image-20190715170327897.png)
 
 
 
@@ -322,8 +324,6 @@ https://www.geeksforgeeks.org/linux-commands/
 
 
 <div style="text-align:right;"><h2>以上</h2></div>
-
-
 
 
 
